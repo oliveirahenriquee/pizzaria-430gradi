@@ -1,0 +1,98 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000; 
+    color: #f4f4f5; 
+}
+
+.nav-link {
+    color: #a1a1aa;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link:active,
+.nav-link:visited {
+    color: #ffffff;
+}
+
+.glass-card {
+    background: rgba(10, 10, 10, 0.75); 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.95));
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    background-image: url('../forno.webp');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.45) saturate(0.85);
+    transform: scale(1.05);
+    z-index: -2;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55));
+    z-index: -1;
+}
+
+.cardapio-item {
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+#cart-toast > div {
+    animation: toastIn 0.25s ease-out;
+}
+
+.text-zinc-350 { color: #d4d4d8; }
+.text-zinc-355 { color: #e4e4e7; }
+.text-zinc-450 { color: #aaa7a1; }
+.text-zinc-455 { color: #7a7871; }
+.text-zinc-550 { color: #52525b; }
+.text-zinc-555 { color: #3f3f46; }
+.text-zinc-650 { color: #27272a; }
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #000;
+}
+::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+}
